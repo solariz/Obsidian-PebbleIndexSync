@@ -25,7 +25,7 @@ jobs:
 
       - name: Check the tag matches the manifest version
         run: |
-          node -e "const m = require('./manifest.json'); if (m.version !== process.env.GITHUB_REF_NAME) { console.error('tag ' + process.env.GITHUB_REF_NAME + ' does not match manifest ' + m.version); process.exit(1); }"
+          node -e "const m = require('./manifest.json'); const tag = process.env.GITHUB_REF_NAME.replace(/^v/, ''); if (m.version !== tag) { console.error('tag ' + process.env.GITHUB_REF_NAME + ' does not match manifest ' + m.version); process.exit(1); }"
 
       - name: Package the plugin files
         run: |
