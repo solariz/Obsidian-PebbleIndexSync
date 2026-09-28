@@ -4,7 +4,7 @@ import {
 	PluginSettingTab,
 	TFile,
 	TFolder,
-	moment,
+	moment as obsidianMoment,
 	normalizePath,
 	requestUrl,
 	type App,
@@ -12,6 +12,14 @@ import {
 	type Setting,
 	type TextComponent,
 } from "obsidian";
+
+/**
+ * Obsidian bundles moment at runtime, but its type comes from the moment package.
+ * Only `format` is used here, and typing it locally keeps the value typed even
+ * when lint runs can't resolve moment's types.
+ */
+type MomentLike = { format: (pattern: string) => string };
+const moment = obsidianMoment as (input: Date) => MomentLike;
 
 const FILENAME_PATTERN = /^[0-9]{12}\.[A-Za-z0-9]{8}\.md$/;
 const LIST_DATE_PATTERN = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/;
