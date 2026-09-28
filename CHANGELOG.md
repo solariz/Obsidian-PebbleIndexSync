@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.6
+
+First Published release to github and obsidian plugin directory.
+No functional changes, only adopting obsidian best practices for build.
+
 ## 1.0.0
 
 First release.
