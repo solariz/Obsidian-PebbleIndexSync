@@ -70,8 +70,10 @@ npm version patch
 git push origin main --tags
 ```
 
-The tag has to match `version` in `manifest.json`, the workflow checks that. A
-leading `v`, as added by `npm version`, is ignored. It builds the plugin and
+The release tag has to match `version` in `manifest.json` exactly, without a
+leading `v`, because Obsidian finds a version's release by its tag. The `.npmrc`
+disables npm's default `v` tag prefix so `npm version` produces the right tag;
+the workflow rejects anything that doesn't match. It builds the plugin and
 creates the release with `main.js`, `manifest.json` and a zip.
 
 ## License

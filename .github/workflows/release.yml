@@ -25,7 +25,15 @@ jobs:
 
       - name: Check the tag matches the manifest version
         run: |
-          node -e "const m = require('./manifest.json'); const tag = process.env.GITHUB_REF_NAME.replace(/^v/, ''); if (m.version !== tag) { console.error('tag ' + process.env.GITHUB_REF_NAME + ' does not match manifest ' + m.version); process.exit(1); }"
+          node -e "
+          const m = require('./manifest.json');
+          const tag = process.env.GITHUB_REF_NAME;
+          if (m.version !== tag) {
+            const hint = tag === 'v' + m.version ? ' (drop the leading v: Obsidian matches the release tag to the manifest version exactly)' : '';
+            console.error('tag ' + tag + ' does not match manifest ' + m.version + hint);
+            process.exit(1);
+          }
+          "
 
       - name: Package the plugin files
         run: |
