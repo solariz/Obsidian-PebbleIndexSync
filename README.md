@@ -73,8 +73,9 @@ git push origin main --tags
 The release tag has to match `version` in `manifest.json` exactly, without a
 leading `v`, because Obsidian finds a version's release by its tag. The `.npmrc`
 disables npm's default `v` tag prefix so `npm version` produces the right tag;
-the workflow rejects anything that doesn't match. It builds the plugin and
-creates the release with `main.js`, `manifest.json` and a zip.
+the workflow rejects anything that doesn't match. It builds the plugin,
+generates build provenance attestations for `main.js` and `manifest.json`, and
+creates the release with those two files — the only ones Obsidian downloads.
 
 ## License
 

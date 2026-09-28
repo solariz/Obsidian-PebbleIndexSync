@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 jobs:
   release:
@@ -35,11 +37,12 @@ jobs:
           }
           "
 
-      - name: Package the plugin files
-        run: |
-          mkdir -p pebble-index-sync
-          cp main.js manifest.json pebble-index-sync/
-          zip -r pebble-index-sync.zip pebble-index-sync
+      - name: Generate artifact attestation
+        uses: actions/attest@v4
+        with:
+          subject-path: |
+            main.js
+            manifest.json
 
       - name: Create the release
         uses: softprops/action-gh-release@v2
@@ -48,4 +51,3 @@ jobs:
           files: |
             main.js
             manifest.json
-            pebble-index-sync.zip
