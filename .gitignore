@@ -39,7 +39,7 @@ npm-debug.log*
 /nsync/log/
 /nsync/debug/
 /nsync/backups/
-
+/nsync/config.php 
 
 # Backup archives created by scripts/backup.sh
 /backups/
