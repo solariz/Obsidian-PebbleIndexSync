@@ -71,9 +71,8 @@ git push origin main --tags
 ```
 
 The tag has to match `version` in `manifest.json`, the workflow checks that. A
-leading `v`, as added by `npm version`, is ignored. It
-builds the plugin and opens a draft release with `main.js`, `manifest.json` and
-a zip.
+leading `v`, as added by `npm version`, is ignored. It builds the plugin and
+creates the release with `main.js`, `manifest.json` and a zip.
 
 ## License
 
