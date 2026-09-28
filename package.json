@@ -1,6 +1,6 @@
 {
 	"name": "pebble-index-sync",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Pulls Pebble Index 01 voice notes out of an NSync webservice and into the vault, optionally embedding them in the daily note.",
 	"main": "main.js",
 	"author": "Marco Goetze",
