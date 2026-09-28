@@ -20,9 +20,30 @@ buildtest.sh
 # Test coverage
 coverage/
 
-# Logs
+# Python artifacts (examples/read.py)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and temp
 *.log
 npm-debug.log*
+*.tmp
+*.orig
+*.rej
+*.lock
+
+# nsync folder
+/nsync/store/
+/nsync/log/
+/nsync/debug/
+/nsync/backups/
+
+
+# Backup archives created by scripts/backup.sh
+/backups/
+
 
 # Editors and operating systems
 .vscode/
@@ -30,3 +51,4 @@ npm-debug.log*
 *.iml
 .DS_Store
 Thumbs.db
+*~
