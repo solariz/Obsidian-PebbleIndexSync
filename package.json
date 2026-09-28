@@ -1,0 +1,45 @@
+{
+	"name": "pebble-index-sync",
+	"version": "1.0.0",
+	"description": "Pulls Pebble Index 01 voice notes out of an NSync webservice and into the vault, optionally embedding them in the daily note.",
+	"main": "main.js",
+	"author": "Marco Goetze",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/solariz/Obsidian-PebbleIndexSync.git"
+	},
+	"homepage": "https://github.com/solariz/Obsidian-PebbleIndexSync",
+	"bugs": {
+		"url": "https://github.com/solariz/Obsidian-PebbleIndexSync/issues"
+	},
+	"keywords": [
+		"obsidian",
+		"obsidian-plugin",
+		"pebble",
+		"nsync"
+	],
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"lint": "eslint src",
+		"test": "vitest run"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.2",
+		"@types/node": "^20.11.16",
+		"@typescript-eslint/parser": "^8.55.0",
+		"esbuild": "0.19.12",
+		"eslint": "^9.39.2",
+		"eslint-plugin-obsidianmd": "^0.1.9",
+		"obsidian": "^1.13.1",
+		"tslib": "2.6.2",
+		"typescript": "5.3.3",
+		"typescript-eslint": "^8.55.0",
+		"vitest": "^3.2.4"
+	}
+}

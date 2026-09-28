@@ -1,0 +1,32 @@
+# Obsidian runtime data, never published
+data.json
+
+# Build output, shipped through GitHub releases
+main.js
+*.map
+
+# Dependencies
+node_modules/
+
+# Build caches
+*.tsbuildinfo
+dist/
+release/
+*.zip
+
+# Local helper, holds a machine specific vault path
+buildtest.sh
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
