@@ -1,7 +1,7 @@
 {
 	"id": "pebble-index-sync",
 	"name": "PebbleIndexSync",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "1.13.0",
 	"description": "Import voice notes from a Pebble Index 01 ring, stored by an NSync webservice, into the vault and optionally into the daily note.",
 	"author": "Marco Goetze",
